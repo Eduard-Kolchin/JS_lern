@@ -1,24 +1,18 @@
-let buttonDawn = false;
+let inputField = document.querySelector(`input`);
+let button = document.querySelector(`button`);
+let duplicateField = document.querySelector(`#duplicateField`);
 let textInit;
+duplicateField.textContent = null;
 
 //Обработчик поля input
-document.querySelector(`input`).addEventListener(`input`, (event) => {
-let duplicateField = document.querySelector(`#duplicateField`) 
-duplicateField.textContent = event.target.value;
-textInit = event.target.value;
-if (buttonDawn === true) {
-    event.target.value.textContent = null;
-    }; 
+inputField.addEventListener(`input`, (event) => {
+duplicateField.textContent = textInit = event.target.value;
 });
+
 //Обработчик кнопки
-button = document.querySelector(`button`);
 button.addEventListener(`mousedown`, (event) => {
-    if (event.which === 1) {console.log(textInit);
-        buttonDawn = true;
-    };
+    console.log(textInit);
 });
 button.addEventListener(`mouseup`, (event) => {
-    if (event.which === 1) {
-        buttonDawn = false;
-    };
+    duplicateField.textContent = inputField.value = null;
 });
